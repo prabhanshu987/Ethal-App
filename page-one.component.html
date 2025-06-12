@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Cold Rolling Pass Schedule</h1>
+  <img src="assets/ethal-logo.png" alt="Ethal Logo" class="page-watermark">
+  <form #pageOneForm="ngForm" [ngClass]="{ 'submitted': submitted }" (ngSubmit)="nextPage()">
+    <div class="form-group">
+      <label>Date:</label>
+      <input required type="date" [(ngModel)]="formData.date" name="date" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Supervisor:</label>
+      <select required [(ngModel)]="formData.supervisor" name="supervisor" class="form-control">
+        <option value="">Select</option>
+        <option>ARUN SHARMA</option>
+        <option>ANIL RAY</option>
+        <option>SHAILESH</option>
+        <option>SUNIL RAY</option>
+        <option>OTHER</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Shift:</label>
+      <select required [(ngModel)]="formData.shift" name="shift" class="form-control">
+        <option value="">Select</option>
+        <option> A SHIFT</option>
+        <option> B SHIFT</option>
+        <option> C SHIFT</option>
+        <option> G SHIFT</option>
+
+
+      </select>
+    </div>
+    <div class="form-group">
+      <label>CRM:</label>
+      <select required [(ngModel)]="formData.crm" name="crm" class="form-control">
+        <option value="">Select</option>
+        <option>CRM-1</option>
+        <option>CRM-2</option>
+        <option>CRM-3</option>
+        <option>4HI-CRM</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-primary" [disabled]="!pageOneForm.valid" (click)="nextPage()">Next</button>
+  </form>
+       <button class="history-btn" (click)="history()">📁 History</button>
+
+</div>

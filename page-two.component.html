@@ -1,0 +1,106 @@
+<div class="container">
+  <button class="back-button" type="button" (click)="back()">&lt;</button>
+  <img src="assets/ethal-logo.png" alt="Ethal Logo" class="page-watermark">
+  <h1>Cold Rolling - Pass Entry</h1>
+  <form>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Ingot:</label>
+        <select required [(ngModel)]="formData.ingot" name="ingot">
+          <option value="">Select</option>
+          <option>13</option>
+          <option>7</option>
+          <option>9.5</option>
+          <option>23</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Lot No.:</label>
+        <input required type="number" [(ngModel)]="formData.lotNo" name="lotNo">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Pot/Lid:</label>
+        <select required [(ngModel)]="formData.potLid" name="potLid">
+          <option value="">Select</option>
+          <option>POT</option>
+          <option>LID</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+  <div class="form-group">
+    <label>Circle Dia (mm):</label>
+    <input required type="number" [(ngModel)]="formData.circleDia" name="circleDia">
+  </div>
+  <div class="form-group">
+    <label>Circle Thickness (mm):</label>
+    <input required type="number" [(ngModel)]="formData.circleTh" name="circleTh">
+  </div>
+</div>
+
+    <h3>Initial Sheet Dimension (Before Entering Machine)</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Width:</label>
+        <input required type="text" [(ngModel)]="formData.initialWidth" name="initialWidth">
+      </div>
+      <div class="form-group">
+        <label>Length:</label>
+        <input required type="text" [(ngModel)]="formData.initialLength" name="initialLength">
+      </div>
+      <div class="form-group">
+        <label>Thickness:</label>
+<input
+  required
+  type="number"
+  step="0.01"
+  min="0"
+  [(ngModel)]="formData.initialThickness"
+  name="initialThickness"
+  (blur)="formatTwoDecimals('initialThickness')"
+/>      </div>
+    </div>
+
+    <h3>Hot Sheared Sheets and Pass Schedule (mm)</h3>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Length:</label>
+        <input required type="text" [(ngModel)]="length" name="length">
+      </div>
+      <div class="form-group">
+        <label>Thickness:</label>
+        <input required type="text" [(ngModel)]="thickness" name="thickness">
+      </div>
+    </div>
+    <button type="button" (click)="addRow()">Add Pass</button>
+
+   <div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Pass No.</th>
+        <th>Width</th>
+        <th>Length</th>
+        <th>Thickness</th>
+        <th>Reduction (mm)</th>
+        <th>Reduction (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td>{{ row.passNo }}</td>
+        <td>{{ row.width }}</td>
+        <td>{{ row.length }}</td>
+        <td>{{ row.thickness }}</td>
+        <td>{{ row.reduction }}</td>
+        <td>{{ row.reductionPercent }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div><br><br>
+    <button type="button" [disabled]="!isFormValid()" (click)="nextPage()">Next</button>
+  </form>
+</div>

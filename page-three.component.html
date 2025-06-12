@@ -1,0 +1,66 @@
+<div class="page-three-doc" #pdfContent>
+  <h2>Pass Schedule Report</h2>
+<img src="assets/ethal-logo.png" alt="Ethal Logo" class="page-watermark">
+  <div class="summary-group ">
+    <div class="summary-item"><strong>Date:</strong> {{ pageOneData.date | date: 'dd / MMM / yyyy'}}</div>
+    <div class="summary-item"><strong>Supervisor:</strong> {{ pageOneData.supervisor }}</div>
+    <div class="summary-item"><strong>Shift:</strong> {{ pageOneData.shift }}</div>
+    <div class="summary-item"><strong>CRM:</strong> {{ pageOneData.crm }}</div>
+    <div class="summary-item"><strong>Ingot:</strong> {{ pageTwoData.ingot }}</div>
+    <div class="summary-item"><strong>Lot No:</strong> {{ pageTwoData.lotNo }}</div>
+    <div class="summary-item"><strong>Pot/Lid:</strong> {{ pageTwoData.potLid }}</div>
+     <div class="summary-item"><strong>Circle Dia :</strong> {{ pageTwoData.circleDia }}</div>
+      <div class="summary-item"><strong>Circle Thickness:</strong> {{ pageTwoData.circleTh }}</div>
+    <div class="summary-item"><strong>Initial Width:</strong> {{ pageTwoData.initialWidth }}</div>
+    <div class="summary-item"><strong>Initial Length:</strong> {{ pageTwoData.initialLength }}</div>
+    <div class="summary-item"><strong>Initial Thickness:</strong> {{ pageTwoData.initialThickness }}</div>
+     
+  </div>
+
+  <h3>Pass Schedule Table</h3>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>P No</th>
+          <th>W</th>
+          <th>L</th>
+          <th>Thi</th>
+          <th>Reduction (mm)</th>
+          <th>Reduction (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of passScheduleData">
+  <td>{{ row.passNo }}</td>
+  <td>{{ row.width }}</td>
+  <td>{{ row.length }}</td>
+  <td>{{ row.thickness }}</td>
+  <td>{{ row.reduction }}</td>
+  <td>{{ row.reductionPercent }}</td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="center-button">
+    <button (click)="generatePDF()">Download PDF</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" [ngStyle]="{ display: showModal ? 'block' : 'none' }">
+    <div class="modal-content">
+      <span class="close-button" (click)="closeModal()">&times;</span>
+      <h3>Pass No. {{ selectedRow?.passNo }}</h3>
+      <table>
+        <tr><th>Width</th><td>{{ selectedRow?.width }}</td></tr>
+        <tr><th>Length</th><td>{{ selectedRow?.length }}</td></tr>
+        <tr><th>Thick</th><td>{{ selectedRow?.thickness }}</td></tr>
+        <tr><th>Redu (mm)</th><td>{{ selectedRow?.reduction }}</td></tr>
+        <tr><th>Redu (%)</th><td>{{ selectedRow?.reductionPercent }}</td></tr>
+      </table>
+    </div>
+  </div>
+        <button class = "history-btn"(click)="exportToExcel()">📁 History</button>
+
+</div>
