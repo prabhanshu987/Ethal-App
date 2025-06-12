@@ -1,0 +1,603 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Only apply red border after form is submitted */
+.submitted input:invalid,
+.submitted select:invalid {
+  border-color: red;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+h2, h3 {
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 1rem;
+  color: #004085;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .form-group {
+    flex: 1 1 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.back-button {
+  /* position: absolute;
+  right: 20px;
+  top: 20px; */
+  background: transparent;
+  color: #007bff;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+
+.back-button:hover {
+  color: #0056b3;
+}
+
+/* Table container for responsiveness */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-container table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-container table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.table-container table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .table-container table {
+    font-size: 12px;
+  }
+
+  .table-container th,
+  .table-container td {
+    padding: 6px;
+    white-space: nowrap;
+  }
+}
+
+/* Enhanced responsive and reactive styling for Page Three */
+.page-three-doc {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  color: #000;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.page-three-doc h2, .page-three-doc h3 {
+  text-align: center;
+  color: #2a2a2a;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.page-three-doc .summary-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.page-three-doc .summary-item {
+  flex: 1 1 45%;
+  padding: 6px 0;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.page-three-doc .table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.page-three-doc table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.page-three-doc th, .page-three-doc td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.page-three-doc th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.page-three-doc .center-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.page-three-doc .center-button button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.page-three-doc .center-button button:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+  .page-three-doc {
+    padding: 20px;
+  }
+  .page-three-doc .summary-item {
+    flex: 1 1 100%;
+  }
+  .page-three-doc table {
+    font-size: 12px;
+  }
+}
+/* Modal and hyperlink support for pass row details */
+.page-three-doc .modal {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.page-three-doc .modal[hidden] {
+  display: none;
+}
+
+.page-three-doc .modal-content {
+  background-color: #fff;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  /* max-width: 400px; */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.page-three-doc .close-button {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.page-three-doc .modal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.page-three-doc .modal-content th,
+.page-three-doc .modal-content td {
+  border: 2px solid #ddd;
+  padding: 8px 8px;
+  text-align: left;
+}
+
+.page-three-doc .modal-content th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+/* Compact modal table styling - reduce row spacing by 50% */
+.page-three-doc .modal-content {
+  background-color: #fff;
+  margin: 40px auto;
+  padding: 16px;
+  border-radius: 8px;
+  width: 95%;
+  /* max-width: 300px; */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.page-three-doc .modal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  line-height: 1.2;
+  table-layout: auto;
+}
+
+.page-three-doc .modal-content th,
+.page-three-doc .modal-content td {
+  border: 1px solid #ddd;
+  /* padding: px 4px; */
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.page-three-doc .modal-content th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+/* Page One Styling with better UX for required fields */
+.page-one-doc {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.page-one-doc h1 {
+  text-align: center;
+  color: #2a2a2a;
+  margin-bottom: 24px;
+}
+
+.page-one-doc .form-group {
+  margin-bottom: 16px;
+}
+
+.page-one-doc label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.page-one-doc input[type="date"],
+.page-one-doc select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.page-one-doc input[type="date"]:focus,
+.page-one-doc select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.page-one-doc button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.page-one-doc button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Remove red borders unless submitted */
+.ng-invalid.ng-touched:not(form):not(.ng-untouched):not(.ng-pristine) {
+  border-color: inherit;
+}
+
+/* Only mark invalid on form submission attempt */
+.submitted .ng-invalid:not(form) {
+  border-color: red;
+}
+
+/* Back button */
+.back-button {
+  /* position: absolute; */
+  right: 20px;
+  top: 20px;
+  background: #dc3545;
+  padding: 6px 10px;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #b52a37;
+}
+/* Enhancements for history page */
+.history-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.history-page table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.history-page th,
+.history-page td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.history-page th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.history-controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.history-controls input[type="text"] {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.history-controls button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.history-controls button:hover {
+  background-color: #0056b3;
+}
+.print-mode {
+  font-size: 8px !important;
+  line-height: 1.1;
+  transform: scale(0.95);
+  transform-origin: top left;
+}
+
+.print-mode table {
+  font-size: 7px !important;
+}
+
+.print-mode th,
+.print-mode td {
+  padding: 2px 4px !important;
+}
+
+.desktop-print-mode {
+  width: 1000px; /* simulate desktop width */
+  font-size: 12px;
+  padding: 20px;
+  background-color: white;
+  line-height: 1.5;
+  zoom: 1; /* force full scale */
+}
+
+.desktop-print-mode table {
+  width: 100%;
+  font-size: 11px;
+  border-collapse: collapse;
+}
+
+.desktop-print-mode th,
+.desktop-print-mode td {
+  border: 1px solid #000;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.page-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  opacity: 0.2;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 300px;
+}
+
+.history-btn {
+  background: transparent;
+  color: #212529;
+  border: 2px solid #004085;
+  padding: 8px 29px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.history-btn:hover {
+  background-color: #004085;
+  color: white;
+}
+
+
+
+.back-button {
+  font-size: 16px;
+  padding: 4px 8px;
+  background-color: #004085;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  /* position: absolute; */
+  top: 16px;
+  right: 16px;
+}
+
+/* Ensure mobile doesn't stretch the button */
+@media (max-width: 600px) {
+  .back-button {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    padding: 2px;
+  }
+}
